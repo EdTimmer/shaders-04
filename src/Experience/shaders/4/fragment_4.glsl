@@ -46,21 +46,21 @@ void main() {
         uv0.y = 1.0 - uv0.y;
     }
 
-    uv0 = fract(uv0 * 1.0) - 0.5;
+    uv0 = fract(uv0 * 3.0) - 0.5;
 
     vec3 finalColor = vec3(0.0);
 
     // Define the radius and tb parameters for the circle wave
-    float radius = 0.35; // Adjust this value to control the size of the wave circles
-    float tb = 1.0; // Adjust this value to control the wave shape
+    float radius = 0.285; // Adjust this value to control the size of the wave circles
+    float tb = 0.8; // Adjust this value to control the wave shape
 
     for (float i = 0.0; i < 3.0; i++) {
-        uv1 = fract(uv1 * 2.0) - 0.5;
+        uv1 = fract(uv1 * 3.0) - 0.5;
         float d = sdCircleWave(uv1, tb, radius) * exp(-length(uv0)); // Using sdCircleWave
         
         vec3 col = palette(length(uv0) + (i * 0.8) + u_Time * 0.000005);
 
-        d = sin(d * 12.0 + (u_Time * 0.0005)) / 4.0;
+        d = sin(d * 7.0 + (u_Time * 0.0005)) / 4.0;
         d = abs(d);
         d = pow(0.03 / d, 0.75);
 
