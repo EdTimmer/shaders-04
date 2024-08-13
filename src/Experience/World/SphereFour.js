@@ -1,9 +1,9 @@
 import * as THREE from 'three'
 import Experience from '../Experience'
-import vertexShader from '../shaders/3/vertex_3.glsl'
-import fragmentShader from '../shaders/3/fragment_3.glsl'
+import vertexShader from '../shaders/4/vertex_4.glsl'
+import fragmentShader from '../shaders/4/fragment_4.glsl'
 
-export default class SphereThree {
+export default class SphereFour {
   constructor() {
     this.experience = new Experience();
     this.scene = this.experience.scene;
@@ -33,10 +33,7 @@ export default class SphereThree {
   setGeometry() {
     // this.geometry = new THREE.PlaneGeometry(50, 50, 32, 32);
     // this.geometry = new THREE.SphereGeometry(200, 32, 32);
-    // this.geometry = new THREE.BoxGeometry(30, 30, 30, 32, 32, 32);
-    // this.geometry = new THREE.IcosahedronGeometry(30, 0);
-    // this.geometry = new THREE.CapsuleGeometry(10, 40, 32, 52); 
-    this.geometry = new THREE.CylinderGeometry(20, 20, 2, 32);
+    this.geometry = new THREE.BoxGeometry(320, 320, 320, 32, 32, 32);
     // this.geometry = new THREE.TorusGeometry(26, 10, 16, 100);
   }
 
@@ -45,7 +42,7 @@ export default class SphereThree {
     // rotate on Y axis half circle
     this.mesh.rotateX(Math.PI * 2.5);
     this.mesh.rotateY(Math.PI * 0.5);
-    this.mesh.position.set(0, 0, 40.0);
+    this.mesh.position.set(0, 0, 0);
 
 
     this.meshPosition = this.mesh.position;
@@ -56,8 +53,7 @@ export default class SphereThree {
   update() {    
     this.material.uniforms.u_Time.value = this.experience.time.getElapsedTime().toFixed(2);
 
-    this.mesh.rotation.x -= 0.001;
-    this.mesh.rotation.y -= 0.001;
-    this.mesh.rotation.z -= 0.001;
+    this.mesh.rotation.x += 0.001;
+    this.mesh.rotation.y += 0.001;
   }
 }

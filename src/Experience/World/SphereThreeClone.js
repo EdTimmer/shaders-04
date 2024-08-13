@@ -3,7 +3,7 @@ import Experience from '../Experience'
 import vertexShader from '../shaders/3/vertex_3.glsl'
 import fragmentShader from '../shaders/3/fragment_3.glsl'
 
-export default class SphereThree {
+export default class SphereThreeClone {
   constructor() {
     this.experience = new Experience();
     this.scene = this.experience.scene;
@@ -45,7 +45,7 @@ export default class SphereThree {
     // rotate on Y axis half circle
     this.mesh.rotateX(Math.PI * 2.5);
     this.mesh.rotateY(Math.PI * 0.5);
-    this.mesh.position.set(0, 0, 40.0);
+    this.mesh.position.set(0, 20, -40.0);
 
 
     this.meshPosition = this.mesh.position;

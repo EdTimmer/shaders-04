@@ -8,12 +8,12 @@ varying vec2 vUv0;
 // vec3 palette(float t, vec3 a, vec3 b, vec3 c, vec3 d) {
 //     return a + b * cos(6.28318 * (c * t + d));
 // }
-// [0.500 0.500 0.000] [0.500 0.500 0.000] [0.047 0.235 0.000] [0.000 0.000 0.000]
+
 vec3 palette(float t) {
-    vec3 a = vec3(0.500, 0.500, 0.000);
-    vec3 b = vec3(0.500, 0.500, 0.000); 
-    vec3 c = vec3(0.047, 0.235, 0.000);
-    vec3 d = vec3(0.000, 0.000, 0.000);
+    vec3 a = vec3(0.5, 0.5, 0.5);
+    vec3 b = vec3(0.5, 0.5, 0.5); 
+    vec3 c = vec3(1.0, 1.0, 1.0);
+    vec3 d = vec3(0.263, 0.416, 0.557);
     return a + b * cos(6.28318 * (c * t + d));
 }
 
@@ -54,18 +54,18 @@ void main() {
     float radius = 0.3; // Adjust this value to control the size of the wave circles
     float tb = 1.0; // Adjust this value to control the wave shape
 
-    for (float i = 0.0; i < 1.0; i++) {
-        uv1 = fract(uv1 * 3.0) - 0.5;
+    for (float i = 0.0; i < 3.0; i++) {
+        uv1 = fract(uv1 * 2.0) - 0.5;
         float d = sdCircleWave(uv1, tb, radius) * exp(-length(uv0)); // Using sdCircleWave
         
-        vec3 col = palette(length(uv0) + (i * 0.8) + u_Time * 0.00005);
+        vec3 col = palette(length(uv0) + (i * 0.8) + u_Time * 0.000005);
 
-        d = cos(d * 12.0 + (u_Time * 0.0005)) / 4.0;
+        d = sin(d * 12.0 + (u_Time * 0.0005)) / 4.0;
         d = abs(d);
-        d = pow(0.01 / d, 0.9);
+        d = pow(0.03 / d, 1.0);
 
         finalColor += col * d;
     }
 
-    gl_FragColor = vec4(finalColor, 1.0);
+    gl_FragColor = vec4(finalColor, 0.5);
 }
