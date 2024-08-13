@@ -33,6 +33,7 @@ export default class CenterGroup {
     this.instance.add(this.coverOne.getMesh());
     this.coverOne.setPosition(0, 0, 60);
     this.coverOne.geometry.rotateX(-Math.PI * 2.5);
+    this.coverOne.geometry.rotateZ(Math.PI);
   }
 
   setCoverTwo() {

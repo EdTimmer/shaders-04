@@ -10,9 +10,9 @@ varying vec2 vUv0;
 // }
 // [0.500 0.500 0.000] [0.500 0.500 0.000] [0.047 0.235 0.000] [0.000 0.000 0.000]
 vec3 palette(float t) {
-    vec3 a = vec3(0.500, 0.500, 0.000);
-    vec3 b = vec3(0.500, 0.500, 0.000); 
-    vec3 c = vec3(0.047, 0.235, 0.000);
+    vec3 a = vec3(1.0);
+    vec3 b = vec3(1.0); 
+    vec3 c = vec3(1.0);
     vec3 d = vec3(0.000, 0.000, 0.000);
     return a + b * cos(6.28318 * (c * t + d));
 }
@@ -58,11 +58,11 @@ void main() {
         uv1 = fract(uv1 * 3.0) - 0.5;
         float d = sdCircleWave(uv1, tb, radius) * exp(-length(uv0)); // Using sdCircleWave
         
-        vec3 col = palette(length(uv0) + (i * 0.8) + u_Time * 0.00005);
+        vec3 col = palette(length(uv0) + (i * 0.8));
 
         d = cos(d * 12.0 + (u_Time * 0.0005)) / 4.0;
         d = abs(d);
-        d = pow(0.01 / d, 0.9);
+        d = pow(0.01 / d, 0.5);
 
         finalColor += col * d;
     }
