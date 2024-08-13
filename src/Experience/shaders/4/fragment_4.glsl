@@ -51,7 +51,7 @@ void main() {
     vec3 finalColor = vec3(0.0);
 
     // Define the radius and tb parameters for the circle wave
-    float radius = 0.3; // Adjust this value to control the size of the wave circles
+    float radius = 0.35; // Adjust this value to control the size of the wave circles
     float tb = 1.0; // Adjust this value to control the wave shape
 
     for (float i = 0.0; i < 3.0; i++) {
@@ -68,5 +68,5 @@ void main() {
     }
     // finalColor = clamp(finalColor, 0.0, 1.0);
     finalColor *= 0.75;
-    gl_FragColor = vec4(finalColor, 0.5);
+    gl_FragColor = vec4(finalColor, 0.9);
 }
