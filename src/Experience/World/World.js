@@ -4,8 +4,8 @@ import Environment from "./Environment"
 // import SurfaceOne from "./SurfaceOne"
 // import SurfaceTwo from "./SurfaceTwo"
 // import SurfaceThree from "./SurfaceThree"
-import SphereOne from "./SphereOne"
-import SphereTwo from "./SphereTwo"
+// import SphereOne from "./SphereOne"
+// import SphereTwo from "./SphereTwo"
 import SphereThree from "./SphereThree"
 // import SurfaceFive from "./SurfaceFive"
 // import SurfaceSix from "./SurfaceSix"
@@ -32,8 +32,8 @@ export default class World {
       // this.surfaceOne = new SurfaceOne();
       // this.surfaceTwo = new SurfaceTwo();
       // this.surfaceThree = new SurfaceThree();
-      this.sphereOne = new SphereOne();
-      this.sphereTwo = new SphereTwo();
+      // this.sphereOne = new SphereOne();
+      // this.sphereTwo = new SphereTwo();
       this.sphereThree = new SphereThree();
       // this.surfaceFive = new SurfaceFive();
       // this.surfaceSix = new SurfaceSix();
@@ -41,7 +41,7 @@ export default class World {
       this.environment = new Environment()
            
       // Pass engineGroup to the camera
-      this.camera.setTarget(this.sphereOne.mesh)
+      this.camera.setTarget(this.sphereThree.mesh)
     })
   }
 
@@ -58,12 +58,12 @@ export default class World {
     // if (this.surfaceThree) {
     //   this.surfaceThree.update()
     // }
-    if (this.sphereOne) {
-      this.sphereOne.update()
-    }
-    if (this.sphereTwo) {
-      this.sphereTwo.update()
-    }
+    // if (this.sphereOne) {
+    //   this.sphereOne.update()
+    // }
+    // if (this.sphereTwo) {
+    //   this.sphereTwo.update()
+    // }
     if (this.sphereThree) {
       this.sphereThree.update()
     }

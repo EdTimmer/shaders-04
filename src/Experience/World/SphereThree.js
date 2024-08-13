@@ -32,8 +32,8 @@ export default class SphereThree {
 
   setGeometry() {
     // this.geometry = new THREE.PlaneGeometry(50, 50, 32, 32);
-    this.geometry = new THREE.SphereGeometry(200, 32, 32);
-    // this.geometry = new THREE.BoxGeometry(50, 50, 50, 32, 32, 32);
+    // this.geometry = new THREE.SphereGeometry(200, 32, 32);
+    this.geometry = new THREE.BoxGeometry(200, 200, 200, 32, 32, 32);
     // this.geometry = new THREE.TorusGeometry(26, 10, 16, 100);
   }
 
