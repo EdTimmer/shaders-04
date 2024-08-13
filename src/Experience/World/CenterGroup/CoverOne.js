@@ -33,11 +33,11 @@ export default class CoverOne {
   setGeometry() {
     // this.geometry = new THREE.PlaneGeometry(50, 50, 32, 32);
     // this.geometry = new THREE.SphereGeometry(14, 32, 32);
-    // this.geometry = new THREE.BoxGeometry(30, 30, 30, 32, 32, 32);
+    // this.geometry = new THREE.BoxGeometry(12, 12, 12, 32, 32, 32);
     // this.geometry = new THREE.IcosahedronGeometry(12, 0);
-    this.geometry = new THREE.ConeGeometry( 12, 10, 84 );
+    // this.geometry = new THREE.ConeGeometry( 12, 10, 84 );
     // this.geometry = new THREE.CapsuleGeometry(10, 40, 32, 52); 
-    // this.geometry = new THREE.CylinderGeometry(16, 16, 12, 32);
+    this.geometry = new THREE.CylinderGeometry(4, 10, 10, 64);
     // this.geometry = new THREE.TorusGeometry(26, 10, 16, 100);
   }
 

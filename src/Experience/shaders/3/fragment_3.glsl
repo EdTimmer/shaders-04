@@ -55,7 +55,7 @@ void main() {
     float tb = 1.0; // Adjust this value to control the wave shape
 
     for (float i = 0.0; i < 1.0; i++) {
-        uv1 = fract(uv1 * 3.0) - 0.5;
+        uv1 = fract(uv1 * 2.0) - 0.5;
         float d = sdCircleWave(uv1, tb, radius) * exp(-length(uv0)); // Using sdCircleWave
         
         vec3 col = palette(length(uv0) + (i * 0.8));
